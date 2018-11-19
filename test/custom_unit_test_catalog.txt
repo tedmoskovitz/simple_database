@@ -1,0 +1,22 @@
+
+
+********************    Starting test_create_table_6_fail    ********************
+
+
+Exception e =  Requested table does not exist.
+
+
+********************    SUCCESS test_create_table_6_fail should fail.    ********************
+
+
+
+
+********************    Starting test_create_table_7_fail    ********************
+
+
+Exception e =  Attempted to create index on invalid column.
+
+
+********************    SUCCESS test_create_table_7_fail should fail.    ********************
+
+

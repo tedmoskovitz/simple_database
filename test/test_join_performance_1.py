@@ -14,9 +14,9 @@ def cleanup():
     :return: None
     """
     cat = CSVCatalog.CSVCatalog()
-    cat.drop_table("people")
-    cat.drop_table("batting")
-    cat.drop_table("teams")
+    cat.drop_table("people", force_drop=True)
+    cat.drop_table("batting", force_drop=True)
+    cat.drop_table("teams", force_drop=True)
 
 def print_test_separator(msg):
     print("\n")

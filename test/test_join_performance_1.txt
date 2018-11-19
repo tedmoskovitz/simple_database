@@ -225,7 +225,7 @@ Processed 90000/104324 left rows...
 Processed 100000/104324 left rows...
 Result = 
  Name: JOIN(people,batting)
-File: ../data/JOIN(people,batting).csv
+File: DERIVED
 Row count: 104324
 null
 Sample rows:
@@ -243,7 +243,7 @@ Sample rows:
 
 
 
-Elapsed time =  25.991910219192505
+Elapsed time =  6.55157494544983
 
 
 ********************    Complete test_join_optimizable_2    ********************
@@ -464,7 +464,7 @@ Sample rows:
 
 Result = 
  Name: JOIN(people,batting)
-File: ../data/JOIN(people,batting).csv
+File: DERIVED
 Row count: 19
 null
 Sample rows:
@@ -482,7 +482,7 @@ Sample rows:
 
 
 
-Elapsed time =  0.08062219619750977
+Elapsed time =  0.007342696189880371
 
 
 ********************    Complete test_join_optimizable_3    ********************
