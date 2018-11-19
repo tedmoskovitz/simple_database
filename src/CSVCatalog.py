@@ -395,7 +395,12 @@ class CSVCatalog:
         self.tables.append(table)
         return table 
 
-    def drop_table(self, table_name):
+    def drop_table(self, table_name, force_drop=False):
+        """
+        drop a table from the catalog 
+        :param table_name: name of the table to drop 
+        :param force_drop: whether to ignore key constraints while dropping 
+        """
         # remove from db
         cursor = self.cnx.cursor()
         template = {"t_name":table_name}
@@ -403,11 +408,11 @@ class CSVCatalog:
         q_columns = "delete from csvcolumns " + w + ";"
         q_indexes = "delete from csvindexes " + w + ";"
         q_table = "delete from csvtables " + w + ";"
-        cursor.execute("set FOREIGN_KEY_CHECKS=0;")
+        if force_drop: cursor.execute("set FOREIGN_KEY_CHECKS=0;");
         cursor.execute(q_indexes)
         cursor.execute(q_columns)
         cursor.execute(q_table)
-        cursor.execute("set FOREIGN_KEY_CHECKS=1;")
+        if force_drop: cursor.execute("set FOREIGN_KEY_CHECKS=1;");
         self.cnx.commit()
         for t in self.tables:
             if t.t_name == table_name:

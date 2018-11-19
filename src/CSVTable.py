@@ -25,6 +25,7 @@ class CSVTable:
         # Holds loaded metadata from the catalog. You have to implement  the called methods below.
         self.__description__ = None
         if load:
+            self.__file_name__ = "../data/{}.csv".format(self.__table_name__)
             self.__load_info__()  # Load metadata
             self.__rows__ = []
             self.__load__()  # Load rows from the CSV file.
@@ -68,7 +69,7 @@ class CSVTable:
         self.__rows__.append(r)
 
     def __get_file_name__(self):
-        return "../data/{}.csv".format(self.__table_name__)
+        return self.__file_name__
 
     # Load from a file and creates the table and data.
     def __load__(self):
@@ -111,11 +112,11 @@ class CSVTable:
         s = "Name: " + self.__table_name__  + "\nFile: " + self.__get_file_name__() + \
             "\nRow count: " + str(len(self.__rows__)) + "\n" + json.dumps(self.__description__, indent=2) + \
             "\nSample rows:" 
-        if len(self.__rows__) >= 10:
-            for i in range(5):
+        if len(self.__rows__) >= max_rows_to_print:
+            for i in range(int(max_rows_to_print/2)):
                 s += "\n" + str(self.__rows__[i])
             s += "\n..."
-            for i in range(-5,0):
+            for i in range(-1*int(max_rows_to_print/2),0):
                 s += "\n" + str(self.__rows__[i])
         else:
             for i in range(len(self.__rows__)):
@@ -352,13 +353,13 @@ class CSVTable:
         if s_max > r_max:
             left_r = right_r
             right_r = self
-            selected_l = left_r.find_by_template(where_template, fields=project_fields) # optimization
+            selected_l = left_r.find_by_template(where_template) # optimization
             selected_l = left_r.table_from_rows("LEFTSELECTED", selected_l)
             left_rows = selected_l.get_row_list()
             right_rows = self.get_row_list()
         else:
             left_r = self
-            selected_l = self.find_by_template(where_template, fields=project_fields) # optimization = select before join
+            selected_l = self.find_by_template(where_template) # optimization = select before join
             selected_l = self.table_from_rows("LEFTSELECTED", selected_l)
             left_rows = selected_l.get_row_list()
             right_rows = right_r.get_row_list()
@@ -376,8 +377,8 @@ class CSVTable:
 
         join_result = self.table_from_rows("JOIN(" + left_r.name() + "," + \
             right_r.name() + ")", result_rows)
-        #result = join_result.find_by_template(where_template, fields=project_fields)
-        return join_result 
+        result = join_result.find_by_template(where_template, fields=project_fields)
+        return result 
 
     def join(self, right_r, on_fields, where_template=None, project_fields=None, optimize=True):
         """
@@ -404,6 +405,6 @@ class CSVTable:
                 project_fields=project_fields, idx_selectivities=(s_max,r_max))
         else:
             result = self.execute_slow_join(right_r, on_fields, where_template=where_template, project_fields=project_fields)
-        #return self.table_from_rows("JOIN(" + self.name() + "," + right_r.name() + ")", result)
-        return result
+        return self.table_from_rows("JOIN(" + self.name() + "," + right_r.name() + ")", result)
+        
         
