@@ -1,0 +1,490 @@
+
+
+********************    Starting test_optimizable_1, optimize = False    ********************
+
+
+
+
+Dude. This takes 30 minutes. Trust me.
+
+
+
+
+********************    Starting test_optimizable_2, optimize = True    ********************
+
+
+People table metadata = 
+ {
+  "definition": {
+    "name": "people",
+    "path": "../data/People.csv"
+  },
+  "columns": [
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "nameLast",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "nameFirst",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "birthCity",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "birthCountry",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "throws",
+      "column_type": "text",
+      "not_null": false
+    }
+  ],
+  "indexes": {}
+}
+Batting table metadata = 
+ {
+  "definition": {
+    "name": "batting",
+    "path": "../data/Batting.csv"
+  },
+  "columns": [
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "H",
+      "column_type": "number",
+      "not_null": true
+    },
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "yearID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "stint",
+      "column_type": "number",
+      "not_null": true
+    }
+  ],
+  "indexes": {}
+}
+Loaded people table = 
+ Name: people
+File: ../data/people.csv
+Row count: 19370
+{
+  "definition": {
+    "name": "people",
+    "path": "../data/People.csv"
+  },
+  "columns": [
+    {
+      "column_name": "birthCity",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "birthCountry",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "nameFirst",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "nameLast",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "throws",
+      "column_type": "text",
+      "not_null": false
+    }
+  ],
+  "indexes": {
+    "pid_idx": {
+      "index_name": "pid_idx",
+      "columns": [
+        "playerID"
+      ],
+      "kind": "INDEX"
+    }
+  }
+}
+Sample rows:
+{'birthCity': 'Denver', 'birthCountry': 'USA', 'nameFirst': 'David', 'nameLast': 'Aardsma', 'playerID': 'aardsda01', 'throws': 'R'}
+{'birthCity': 'Mobile', 'birthCountry': 'USA', 'nameFirst': 'Hank', 'nameLast': 'Aaron', 'playerID': 'aaronha01', 'throws': 'R'}
+{'birthCity': 'Mobile', 'birthCountry': 'USA', 'nameFirst': 'Tommie', 'nameLast': 'Aaron', 'playerID': 'aaronto01', 'throws': 'R'}
+{'birthCity': 'Orange', 'birthCountry': 'USA', 'nameFirst': 'Don', 'nameLast': 'Aase', 'playerID': 'aasedo01', 'throws': 'R'}
+{'birthCity': 'Palm Beach', 'birthCountry': 'USA', 'nameFirst': 'Andy', 'nameLast': 'Abad', 'playerID': 'abadan01', 'throws': 'L'}
+...
+{'birthCity': 'San Francisco', 'birthCountry': 'USA', 'nameFirst': 'Frank', 'nameLast': 'Zupo', 'playerID': 'zupofr01', 'throws': 'R'}
+{'birthCity': 'San Mateo', 'birthCountry': 'USA', 'nameFirst': 'Paul', 'nameLast': 'Zuvella', 'playerID': 'zuvelpa01', 'throws': 'R'}
+{'birthCity': 'Holland', 'birthCountry': 'USA', 'nameFirst': 'George', 'nameLast': 'Zuverink', 'playerID': 'zuverge01', 'throws': 'R'}
+{'birthCity': 'St. Louis', 'birthCountry': 'USA', 'nameFirst': 'Dutch', 'nameLast': 'Zwilling', 'playerID': 'zwilldu01', 'throws': 'L'}
+{'birthCity': 'Monee', 'birthCountry': 'USA', 'nameFirst': 'Tony', 'nameLast': 'Zych', 'playerID': 'zychto01', 'throws': 'R'}
+
+Loaded batting table = 
+ Name: batting
+File: ../data/batting.csv
+Row count: 104324
+{
+  "definition": {
+    "name": "batting",
+    "path": "../data/Batting.csv"
+  },
+  "columns": [
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "H",
+      "column_type": "number",
+      "not_null": true
+    },
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "stint",
+      "column_type": "number",
+      "not_null": true
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "yearID",
+      "column_type": "text",
+      "not_null": true
+    }
+  ],
+  "indexes": {}
+}
+Sample rows:
+{'AB': '4', 'H': '0', 'playerID': 'abercda01', 'stint': '1', 'teamID': 'TRO', 'yearID': '1871'}
+{'AB': '118', 'H': '32', 'playerID': 'addybo01', 'stint': '1', 'teamID': 'RC1', 'yearID': '1871'}
+{'AB': '137', 'H': '40', 'playerID': 'allisar01', 'stint': '1', 'teamID': 'CL1', 'yearID': '1871'}
+{'AB': '133', 'H': '44', 'playerID': 'allisdo01', 'stint': '1', 'teamID': 'WS3', 'yearID': '1871'}
+{'AB': '120', 'H': '39', 'playerID': 'ansonca01', 'stint': '1', 'teamID': 'RC1', 'yearID': '1871'}
+...
+{'AB': '6', 'H': '1', 'playerID': 'zimmejo02', 'stint': '1', 'teamID': 'DET', 'yearID': '2017'}
+{'AB': '524', 'H': '159', 'playerID': 'zimmery01', 'stint': '1', 'teamID': 'WAS', 'yearID': '2017'}
+{'AB': '435', 'H': '101', 'playerID': 'zobribe01', 'stint': '1', 'teamID': 'CHN', 'yearID': '2017'}
+{'AB': '387', 'H': '97', 'playerID': 'zuninmi01', 'stint': '1', 'teamID': 'SEA', 'yearID': '2017'}
+{'AB': '0', 'H': '0', 'playerID': 'zychto01', 'stint': '1', 'teamID': 'SEA', 'yearID': '2017'}
+
+Processed 10000/104324 left rows...
+Processed 20000/104324 left rows...
+Processed 30000/104324 left rows...
+Processed 40000/104324 left rows...
+Processed 50000/104324 left rows...
+Processed 60000/104324 left rows...
+Processed 70000/104324 left rows...
+Processed 80000/104324 left rows...
+Processed 90000/104324 left rows...
+Processed 100000/104324 left rows...
+Result = 
+ Name: JOIN(people,batting)
+File: ../data/JOIN(people,batting).csv
+Row count: 104324
+null
+Sample rows:
+{'AB': '4', 'H': '0', 'playerID': 'abercda01', 'stint': '1', 'teamID': 'TRO', 'yearID': '1871', 'birthCity': 'Fort Towson', 'birthCountry': 'USA', 'nameFirst': 'Frank', 'nameLast': 'Abercrombie', 'throws': ''}
+{'AB': '118', 'H': '32', 'playerID': 'addybo01', 'stint': '1', 'teamID': 'RC1', 'yearID': '1871', 'birthCity': 'Port Hope', 'birthCountry': 'CAN', 'nameFirst': 'Bob', 'nameLast': 'Addy', 'throws': 'L'}
+{'AB': '137', 'H': '40', 'playerID': 'allisar01', 'stint': '1', 'teamID': 'CL1', 'yearID': '1871', 'birthCity': 'Philadelphia', 'birthCountry': 'USA', 'nameFirst': 'Art', 'nameLast': 'Allison', 'throws': ''}
+{'AB': '133', 'H': '44', 'playerID': 'allisdo01', 'stint': '1', 'teamID': 'WS3', 'yearID': '1871', 'birthCity': 'Philadelphia', 'birthCountry': 'USA', 'nameFirst': 'Doug', 'nameLast': 'Allison', 'throws': 'R'}
+{'AB': '120', 'H': '39', 'playerID': 'ansonca01', 'stint': '1', 'teamID': 'RC1', 'yearID': '1871', 'birthCity': 'Marshalltown', 'birthCountry': 'USA', 'nameFirst': 'Cap', 'nameLast': 'Anson', 'throws': 'R'}
+...
+{'AB': '6', 'H': '1', 'playerID': 'zimmejo02', 'stint': '1', 'teamID': 'DET', 'yearID': '2017', 'birthCity': 'Auburndale', 'birthCountry': 'USA', 'nameFirst': 'Jordan', 'nameLast': 'Zimmermann', 'throws': 'R'}
+{'AB': '524', 'H': '159', 'playerID': 'zimmery01', 'stint': '1', 'teamID': 'WAS', 'yearID': '2017', 'birthCity': 'Washington', 'birthCountry': 'USA', 'nameFirst': 'Ryan', 'nameLast': 'Zimmerman', 'throws': 'R'}
+{'AB': '435', 'H': '101', 'playerID': 'zobribe01', 'stint': '1', 'teamID': 'CHN', 'yearID': '2017', 'birthCity': 'Eureka', 'birthCountry': 'USA', 'nameFirst': 'Ben', 'nameLast': 'Zobrist', 'throws': 'R'}
+{'AB': '387', 'H': '97', 'playerID': 'zuninmi01', 'stint': '1', 'teamID': 'SEA', 'yearID': '2017', 'birthCity': 'Cape Coral', 'birthCountry': 'USA', 'nameFirst': 'Mike', 'nameLast': 'Zunino', 'throws': 'R'}
+{'AB': '0', 'H': '0', 'playerID': 'zychto01', 'stint': '1', 'teamID': 'SEA', 'yearID': '2017', 'birthCity': 'Monee', 'birthCountry': 'USA', 'nameFirst': 'Tony', 'nameLast': 'Zych', 'throws': 'R'}
+
+
+
+Elapsed time =  25.991910219192505
+
+
+********************    Complete test_join_optimizable_2    ********************
+
+
+
+
+********************    Starting test_optimizable_3, optimize = True    ********************
+
+
+People table metadata = 
+ {
+  "definition": {
+    "name": "people",
+    "path": "../data/People.csv"
+  },
+  "columns": [
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "nameLast",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "nameFirst",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "birthCity",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "birthCountry",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "throws",
+      "column_type": "text",
+      "not_null": false
+    }
+  ],
+  "indexes": {
+    "pid_idx": {
+      "index_name": "pid_idx",
+      "columns": [
+        "playerID"
+      ],
+      "kind": "INDEX"
+    }
+  }
+}
+Batting table metadata = 
+ {
+  "definition": {
+    "name": "batting",
+    "path": "../data/Batting.csv"
+  },
+  "columns": [
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "H",
+      "column_type": "number",
+      "not_null": true
+    },
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "yearID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "stint",
+      "column_type": "number",
+      "not_null": true
+    }
+  ],
+  "indexes": {}
+}
+Loaded people table = 
+ Name: people
+File: ../data/people.csv
+Row count: 19370
+{
+  "definition": {
+    "name": "people",
+    "path": "../data/People.csv"
+  },
+  "columns": [
+    {
+      "column_name": "birthCity",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "birthCountry",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "nameFirst",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "nameLast",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "throws",
+      "column_type": "text",
+      "not_null": false
+    }
+  ],
+  "indexes": {
+    "pid_idx": {
+      "index_name": "pid_idx",
+      "columns": [
+        "playerID"
+      ],
+      "kind": "INDEX"
+    }
+  }
+}
+Sample rows:
+{'birthCity': 'Denver', 'birthCountry': 'USA', 'nameFirst': 'David', 'nameLast': 'Aardsma', 'playerID': 'aardsda01', 'throws': 'R'}
+{'birthCity': 'Mobile', 'birthCountry': 'USA', 'nameFirst': 'Hank', 'nameLast': 'Aaron', 'playerID': 'aaronha01', 'throws': 'R'}
+{'birthCity': 'Mobile', 'birthCountry': 'USA', 'nameFirst': 'Tommie', 'nameLast': 'Aaron', 'playerID': 'aaronto01', 'throws': 'R'}
+{'birthCity': 'Orange', 'birthCountry': 'USA', 'nameFirst': 'Don', 'nameLast': 'Aase', 'playerID': 'aasedo01', 'throws': 'R'}
+{'birthCity': 'Palm Beach', 'birthCountry': 'USA', 'nameFirst': 'Andy', 'nameLast': 'Abad', 'playerID': 'abadan01', 'throws': 'L'}
+...
+{'birthCity': 'San Francisco', 'birthCountry': 'USA', 'nameFirst': 'Frank', 'nameLast': 'Zupo', 'playerID': 'zupofr01', 'throws': 'R'}
+{'birthCity': 'San Mateo', 'birthCountry': 'USA', 'nameFirst': 'Paul', 'nameLast': 'Zuvella', 'playerID': 'zuvelpa01', 'throws': 'R'}
+{'birthCity': 'Holland', 'birthCountry': 'USA', 'nameFirst': 'George', 'nameLast': 'Zuverink', 'playerID': 'zuverge01', 'throws': 'R'}
+{'birthCity': 'St. Louis', 'birthCountry': 'USA', 'nameFirst': 'Dutch', 'nameLast': 'Zwilling', 'playerID': 'zwilldu01', 'throws': 'L'}
+{'birthCity': 'Monee', 'birthCountry': 'USA', 'nameFirst': 'Tony', 'nameLast': 'Zych', 'playerID': 'zychto01', 'throws': 'R'}
+
+Loaded batting table = 
+ Name: batting
+File: ../data/batting.csv
+Row count: 104324
+{
+  "definition": {
+    "name": "batting",
+    "path": "../data/Batting.csv"
+  },
+  "columns": [
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "H",
+      "column_type": "number",
+      "not_null": true
+    },
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "stint",
+      "column_type": "number",
+      "not_null": true
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "yearID",
+      "column_type": "text",
+      "not_null": true
+    }
+  ],
+  "indexes": {}
+}
+Sample rows:
+{'AB': '4', 'H': '0', 'playerID': 'abercda01', 'stint': '1', 'teamID': 'TRO', 'yearID': '1871'}
+{'AB': '118', 'H': '32', 'playerID': 'addybo01', 'stint': '1', 'teamID': 'RC1', 'yearID': '1871'}
+{'AB': '137', 'H': '40', 'playerID': 'allisar01', 'stint': '1', 'teamID': 'CL1', 'yearID': '1871'}
+{'AB': '133', 'H': '44', 'playerID': 'allisdo01', 'stint': '1', 'teamID': 'WS3', 'yearID': '1871'}
+{'AB': '120', 'H': '39', 'playerID': 'ansonca01', 'stint': '1', 'teamID': 'RC1', 'yearID': '1871'}
+...
+{'AB': '6', 'H': '1', 'playerID': 'zimmejo02', 'stint': '1', 'teamID': 'DET', 'yearID': '2017'}
+{'AB': '524', 'H': '159', 'playerID': 'zimmery01', 'stint': '1', 'teamID': 'WAS', 'yearID': '2017'}
+{'AB': '435', 'H': '101', 'playerID': 'zobribe01', 'stint': '1', 'teamID': 'CHN', 'yearID': '2017'}
+{'AB': '387', 'H': '97', 'playerID': 'zuninmi01', 'stint': '1', 'teamID': 'SEA', 'yearID': '2017'}
+{'AB': '0', 'H': '0', 'playerID': 'zychto01', 'stint': '1', 'teamID': 'SEA', 'yearID': '2017'}
+
+Result = 
+ Name: JOIN(people,batting)
+File: ../data/JOIN(people,batting).csv
+Row count: 19
+null
+Sample rows:
+{'AB': '565', 'H': '185', 'playerID': 'willite01', 'stint': '1', 'teamID': 'BOS', 'yearID': '1939', 'birthCity': 'San Diego', 'birthCountry': 'USA', 'nameFirst': 'Ted', 'nameLast': 'Williams', 'throws': 'R'}
+{'AB': '561', 'H': '193', 'playerID': 'willite01', 'stint': '1', 'teamID': 'BOS', 'yearID': '1940', 'birthCity': 'San Diego', 'birthCountry': 'USA', 'nameFirst': 'Ted', 'nameLast': 'Williams', 'throws': 'R'}
+{'AB': '456', 'H': '185', 'playerID': 'willite01', 'stint': '1', 'teamID': 'BOS', 'yearID': '1941', 'birthCity': 'San Diego', 'birthCountry': 'USA', 'nameFirst': 'Ted', 'nameLast': 'Williams', 'throws': 'R'}
+{'AB': '522', 'H': '186', 'playerID': 'willite01', 'stint': '1', 'teamID': 'BOS', 'yearID': '1942', 'birthCity': 'San Diego', 'birthCountry': 'USA', 'nameFirst': 'Ted', 'nameLast': 'Williams', 'throws': 'R'}
+{'AB': '514', 'H': '176', 'playerID': 'willite01', 'stint': '1', 'teamID': 'BOS', 'yearID': '1946', 'birthCity': 'San Diego', 'birthCountry': 'USA', 'nameFirst': 'Ted', 'nameLast': 'Williams', 'throws': 'R'}
+...
+{'AB': '400', 'H': '138', 'playerID': 'willite01', 'stint': '1', 'teamID': 'BOS', 'yearID': '1956', 'birthCity': 'San Diego', 'birthCountry': 'USA', 'nameFirst': 'Ted', 'nameLast': 'Williams', 'throws': 'R'}
+{'AB': '420', 'H': '163', 'playerID': 'willite01', 'stint': '1', 'teamID': 'BOS', 'yearID': '1957', 'birthCity': 'San Diego', 'birthCountry': 'USA', 'nameFirst': 'Ted', 'nameLast': 'Williams', 'throws': 'R'}
+{'AB': '411', 'H': '135', 'playerID': 'willite01', 'stint': '1', 'teamID': 'BOS', 'yearID': '1958', 'birthCity': 'San Diego', 'birthCountry': 'USA', 'nameFirst': 'Ted', 'nameLast': 'Williams', 'throws': 'R'}
+{'AB': '272', 'H': '69', 'playerID': 'willite01', 'stint': '1', 'teamID': 'BOS', 'yearID': '1959', 'birthCity': 'San Diego', 'birthCountry': 'USA', 'nameFirst': 'Ted', 'nameLast': 'Williams', 'throws': 'R'}
+{'AB': '310', 'H': '98', 'playerID': 'willite01', 'stint': '1', 'teamID': 'BOS', 'yearID': '1960', 'birthCity': 'San Diego', 'birthCountry': 'USA', 'nameFirst': 'Ted', 'nameLast': 'Williams', 'throws': 'R'}
+
+
+
+Elapsed time =  0.08062219619750977
+
+
+********************    Complete test_join_optimizable_3    ********************
+
+
