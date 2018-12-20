@@ -1,6 +1,4 @@
-**Simple Database Implementation**
-
-**Ted Moskovitz, 2018**
+**Simple Database**
 
 An implementation of a simple database. To test, simply run any .py file in the test directory. The implementation assumes that three tables have been created to hold the database metadata, csvtables, csvindexes, and csvcolumns. Their specifications are included in the 'sql' folder. The included data files are from the 2017 Lahman baseball database. 
 
